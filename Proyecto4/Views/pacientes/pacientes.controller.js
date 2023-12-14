@@ -26,7 +26,7 @@ var todos = () => {
             <td>
             <button class='btn btn-success' onclick='editar(${valor.ID_paciente})'>Editar</button>
             <button class='btn btn-danger' onclick='eliminar(${valor.ID_paciente})'>Eliminar</button>
-           /*  <button class='btn btn-info' onclick='ver(${valor.ID_paciente})'>Ver</button> */
+           
             </td></tr>
                 `;
     });
