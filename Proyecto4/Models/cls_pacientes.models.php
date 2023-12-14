@@ -75,5 +75,22 @@ class Clase_Pacientes
         }
     }
 
+    public function verificar_paciente($Nombre)
+    {
+        try {
+            $con = new Clase_Conectar_Base_Datos();
+            $con = $con->ProcedimientoConectar();
+            $cadena = "SELECT count(*) as nombre_repetido FROM `pacientes` WHERE `Nombre`= '$Nombre'";
+            //echo $cadena;
+            $result = mysqli_query($con, $cadena);
+            return $result;
+        } catch (Throwable $th) {
+            return $th->getMessage();
+        } finally {
+            $con->close();
+        }
+    
+    }
+
 
 }

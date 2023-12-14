@@ -78,6 +78,30 @@ var editar = (ID_paciente) => {
   $("#Modal_pacientes").modal("show");
 }
 
+var verificar_paciente = () => {
+  let Nombre = $('#Nombre').val()
+  $.post(
+    '../../Controllers/pacientes.controller.php?op=verificar_paciente',
+    { Nombre: Nombre },
+    (res) => {
+      console.log(res);
+      res = JSON.parse(res);
+      if (parseInt(res.pais_repetido) > 0) {
+        $("#PacienteRepetido").removeClass("d-none");
+        $("#PacienteRepetido").html(
+          "El Paciente ingresado, ya exite en la base de datos"
+        );
+        $("button").prop("disabled", true);
+      } else {
+        $("#PacienteRepetido").addClass("d-none");
+        $("button").prop("disabled", false);
+      }
+    }
+
+  );
+
+}
+
 
 var eliminar = (ID_paciente) => {
   Swal.fire({

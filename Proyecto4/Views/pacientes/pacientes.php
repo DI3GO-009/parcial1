@@ -66,7 +66,7 @@
                   
                     <div class="form-group">
                         <label for="Nombre">Nombre del Paciente</label>
-                        <input type="text"   class="form-control" id="Nombre" name="Nombre" placeholder="Ingrese el nombre del paciente">
+                        <input type="text"  required onfocusout="verificar_paciente()" class="form-control" id="Nombre" name="Nombre" placeholder="Ingrese el nombre del paciente">
                         
                     </div>
                    
