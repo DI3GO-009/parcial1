@@ -45,9 +45,9 @@ var guardaryeditar = (e) => {
   var ruta = "";
   var ID_tratamiento = document.getElementById("ID_tratamiento").value;
   if (ID_tratamiento > 0) {
-    ruta = "../../Controllers/tratamientos.controller.php?op=insertar";
-  } else {
     ruta = "../../Controllers/tratamientos.controller.php?op=actualizar";
+  } else {
+    ruta = "../../Controllers/tratamientos.controller.php?op=insertar";
   }
   $.ajax({
     url: ruta,

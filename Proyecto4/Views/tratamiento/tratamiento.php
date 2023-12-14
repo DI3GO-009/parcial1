@@ -59,12 +59,12 @@
             <form method="post" id="frm_tratamiento">
                 <div class="modal-header">
                     <h5 class="modal-title" id="staticBackdropLabel">Tratamiento</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="cargaPacientes()" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"  aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
 
                     <input type="hidden" name="ID_tratamiento" id="ID_tratamiento">
-
+                    
                     <div class="form-group">
                         <label for="ID_paciente">Seleccione un paciente</label>
                       <select name="ID_paciente" id="ID_paciente" class="form-control">
