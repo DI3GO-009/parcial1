@@ -42,11 +42,12 @@ switch ($_GET["op"]) {
         $datos = $pacientes->eliminar($ID_paciente); //llamo al modelo de usuarios e invoco al procedimiento uno y almaceno en una variable
         echo json_encode($datos); //devuelvo el arreglo en formato json
         break;
-    case 'verificar_paciente':
+        case 'verificar_paciente':
             $Nombre = $_POST["Nombre"];
-            $datos = array(); //defino un arreglo
-            $datos = $paises->verificar_paciente($Nombre);
-            $uno = mysqli_fetch_assoc($datos);
-            echo json_encode($uno);        
+            $datos = $pacientes->verificar_paciente($Nombre);
+            $resultado = mysqli_fetch_assoc($datos);
+            $respuesta = array("paciente_repetido" => $resultado['nombre_repetido']);
+            echo json_encode($respuesta);
             break;
+        
 }

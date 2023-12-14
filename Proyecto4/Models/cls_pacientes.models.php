@@ -76,21 +76,20 @@ class Clase_Pacientes
     }
 
     public function verificar_paciente($Nombre)
-    {
-        try {
-            $con = new Clase_Conectar_Base_Datos();
-            $con = $con->ProcedimientoConectar();
-            $cadena = "SELECT count(*) as nombre_repetido FROM `pacientes` WHERE `Nombre`= '$Nombre'";
-            //echo $cadena;
-            $result = mysqli_query($con, $cadena);
-            return $result;
-        } catch (Throwable $th) {
-            return $th->getMessage();
-        } finally {
-            $con->close();
-        }
-    
+{
+    try {
+        $con = new Clase_Conectar_Base_Datos();
+        $con = $con->ProcedimientoConectar();
+        $cadena = "SELECT count(*) as nombre_repetido FROM `pacientes` WHERE `Nombre`= '$Nombre'";
+        $result = mysqli_query($con, $cadena);
+        return $result; // Aquí deberías devolver solo el resultado
+    } catch (Throwable $th) {
+        return array("error" => $th->getMessage()); // Devuelve un array con un mensaje de error si algo falla
+    } finally {
+        $con->close();
     }
+}
+
 
 
 }

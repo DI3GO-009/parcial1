@@ -79,7 +79,7 @@ var editar = (ID_paciente) => {
 }
 
 var verificar_paciente = () => {
-  let Nombre = $('#Nombre').val()
+  let Nombre = $('#Nombre').val();
   $.post(
     '../../Controllers/pacientes.controller.php?op=verificar_paciente',
     { Nombre: Nombre },
@@ -89,7 +89,7 @@ var verificar_paciente = () => {
       if (parseInt(res.paciente_repetido) > 0) {
         $("#PacienteRepetido").removeClass("d-none");
         $("#PacienteRepetido").html(
-          "El Paciente ingresado, ya exite en la base de datos"
+          "El Paciente ingresado ya existe en la base de datos"
         );
         $("button").prop("disabled", true);
       } else {
@@ -97,10 +97,9 @@ var verificar_paciente = () => {
         $("button").prop("disabled", false);
       }
     }
-
   );
-
 }
+
 
 
 var eliminar = (ID_paciente) => {
