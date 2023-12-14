@@ -56,7 +56,7 @@ var guardaryeditar = (e) => {
         todos();
         limpia_Cajas();
       } else {
-        Swal.fire("Paciente", "Error al guardo, intente mas tarde", "error");
+        Swal.fire("Paciente ya registrado", "Ingrese un nuevo paciente", "error");
       }
     },
   });
