@@ -61,7 +61,7 @@ class Pacientes_Model {
             Swal.fire("pacientes", "Paciente Registrado", "success");
             todos_controlador();
           } else {
-            Swal.fire("Error", res, "error");
+            Swal.fire("Error", "el paciente esta repetido", res, "error");
           }
         },
       });

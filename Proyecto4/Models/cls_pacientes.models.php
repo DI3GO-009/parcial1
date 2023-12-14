@@ -30,7 +30,7 @@ class Clase_Pacientes
             $con->close();
         }
     }
-    public function insertar($Nombre,$Edad,$Enfermedad,$Fecha_ingreso)
+   /*  public function insertar($Nombre,$Edad,$Enfermedad,$Fecha_ingreso)
     {
         try {
             $con = new Clase_Conectar_Base_Datos();
@@ -44,7 +44,37 @@ class Clase_Pacientes
         } finally {
             $con->close();
         }
+    } */
+
+    public function insertar($Nombre, $Edad, $Enfermedad, $Fecha_ingreso)
+{
+    try {
+        $con = new Clase_Conectar_Base_Datos();
+        $con = $con->ProcedimientoConectar();
+
+        
+        $consulta_repetido = "SELECT COUNT(*) as total FROM pacientes WHERE Nombre = '$Nombre'";
+        $resultado_repetido = mysqli_query($con, $consulta_repetido);
+        $total = mysqli_fetch_assoc($resultado_repetido)["total"];
+
+        if ($total > 0) {
+            return "Error: El nombre '$Nombre' ya existe en la base de datos.";
+        }
+
+        
+        $cadena = "INSERT INTO pacientes(Nombre, Edad, Enfermedad, Fecha_ingreso) VALUES ('$Nombre', '$Edad', '$Enfermedad', '$Fecha_ingreso')";
+        $result = mysqli_query($con, $cadena);
+
+        return 'ok';
+    } catch (Throwable $th) {
+        return $th->getMessage();
+    } finally {
+        $con->close();
     }
+}
+
+
+
     public function actualizar($ID_paciente, $Nombre,$Edad,$Enfermedad,$Fecha_ingreso)
     {
         try {
