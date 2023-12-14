@@ -23,15 +23,9 @@ var todos = () => {
                 <td>${valor.Costo}</td>
                 <td>${valor.Fecha_inicio}</td>
             <td>
-            <button class='btn btn-success' onclick='editar(${
-              valor.ID_tratamiento
-            })'>Editar</button>
-            <button class='btn btn-danger' onclick='eliminar(${
-              valor.ID_tratamiento
-            })'>Eliminar</button>
-            <button class='btn btn-info' onclick='ver(${
-              valor.ID_tratamiento
-            })'>Ver</button>
+            <button class='btn btn-success' onclick='editar(${valor.ID_tratamiento})'>Editar</button>
+            <button class='btn btn-danger' onclick='eliminar(${valor.ID_tratamiento})'>Eliminar</button>
+            <button class='btn btn-info' onclick='ver(${valor.ID_tratamiento})'>Ver</button>
             </td></tr>
                 `;
     });
@@ -100,11 +94,10 @@ var editar = async (ID_tratamiento) => {
   $("#Modal_tratamiento").modal("show");
 };
 
-/*  var eliminar = (ID_tratamiento) => {
-
+var eliminar = (ID_tratamiento) => {
   Swal.fire({
     title: "Tratamientos",
-    text: "Esta seguro de eliminar el tratamiento",
+    text: "Está seguro de eliminar el tratamiento",
     icon: "warning",
     showCancelButton: true,
     confirmButtonColor: "#d33",
@@ -123,18 +116,18 @@ var editar = async (ID_tratamiento) => {
           } else {
             Swal.fire("Error", res, "error");
           }
+          limpia_Cajas(); // Se ejecuta después de procesar la respuesta del servidor
         }
       );
     }
   });
+};
 
-  limpia_Cajas();
-};  */
 
-var eliminar=(ID_tratamiento)=>{
+/* var eliminar=(ID_tratamiento)=>{
   var eliminar = new Tratamiento_Model(ID_tratamiento, "", "", "", "","eliminar");
   eliminar.eliminar();
-}
+} */
 
 var limpia_Cajas = () => {
   document.getElementById("ID_tratamiento").value = "";  

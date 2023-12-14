@@ -7,12 +7,15 @@ class Clase_Tratamientos
         try {
             $con = new Clase_Conectar_Base_Datos();
             $con = $con->ProcedimientoConectar();
-            $cadena = "SELECT Pacientes.Nombre AS Nombre_paciente, 
+            $cadena = "SELECT 
+            Tratamientos.ID_tratamiento, -- Agregar el campo ID_tratamiento
+            Pacientes.Nombre AS Nombre_paciente, 
             Tratamientos.Tipo_tratamiento, 
             Tratamientos.Costo, 
             Tratamientos.Fecha_inicio
-            FROM Pacientes
-            INNER JOIN Tratamientos ON Pacientes.ID_paciente = Tratamientos.ID_paciente";
+        FROM Pacientes
+        INNER JOIN Tratamientos ON Pacientes.ID_paciente = Tratamientos.ID_paciente"
+        ;
      
             $result = mysqli_query($con, $cadena);
             return $result;

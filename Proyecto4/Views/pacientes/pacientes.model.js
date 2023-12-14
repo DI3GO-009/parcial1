@@ -121,6 +121,7 @@ class Pacientes_Model {
     }
   
     eliminar() {
+        
       var ID_paciente = this.ID_paciente;
   
       Swal.fire({
