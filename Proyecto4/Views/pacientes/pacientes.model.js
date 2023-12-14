@@ -113,6 +113,12 @@ class Pacientes_Model {
       this.limpia_Cajas();
     }
   
+
+
+
+
+
+    
     eliminar() {
         
       var ID_paciente = this.ID_paciente;

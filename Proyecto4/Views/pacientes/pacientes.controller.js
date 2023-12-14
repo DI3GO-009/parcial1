@@ -86,7 +86,7 @@ var verificar_paciente = () => {
     (res) => {
       console.log(res);
       res = JSON.parse(res);
-      if (parseInt(res.pais_repetido) > 0) {
+      if (parseInt(res.paciente_repetido) > 0) {
         $("#PacienteRepetido").removeClass("d-none");
         $("#PacienteRepetido").html(
           "El Paciente ingresado, ya exite en la base de datos"
