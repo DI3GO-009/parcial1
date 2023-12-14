@@ -100,7 +100,7 @@ var editar = async (ID_tratamiento) => {
   $("#Modal_tratamiento").modal("show");
 };
 
- var eliminar = (ID_tratamiento) => {
+/*  var eliminar = (ID_tratamiento) => {
 
   Swal.fire({
     title: "Tratamientos",
@@ -129,12 +129,12 @@ var editar = async (ID_tratamiento) => {
   });
 
   limpia_Cajas();
-}; 
+};  */
 
-/* var eliminar=(ID_tratamiento)=>{
-  var eliminar = new tratamiento_model(ID_tratamiento,"eliminar");
+var eliminar=(ID_tratamiento)=>{
+  var eliminar = new Tratamiento_Model(ID_tratamiento, "", "", "", "","eliminar");
   eliminar.eliminar();
-} */
+}
 
 var limpia_Cajas = () => {
   document.getElementById("ID_tratamiento").value = "";  

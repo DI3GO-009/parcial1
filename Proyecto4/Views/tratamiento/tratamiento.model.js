@@ -122,6 +122,7 @@ class Tratamiento_Model {
   
     eliminar() {
       var ID_tratamiento = this.ID_tratamiento; 
+      console.log(ID_tratamiento);
 
       Swal.fire({
         title: "Tratamientos",

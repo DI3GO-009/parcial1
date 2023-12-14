@@ -64,7 +64,7 @@
                 <div class="modal-body">
 
                     <input type="hidden" name="ID_tratamiento" id="ID_tratamiento">
-                    
+
                     <div class="form-group">
                         <label for="ID_paciente">Seleccione un paciente</label>
                       <select name="ID_paciente" id="ID_paciente" class="form-control">

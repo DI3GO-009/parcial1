@@ -41,7 +41,7 @@ class Clase_Tratamientos
         try {
             $con = new Clase_Conectar_Base_Datos();
             $con = $con->ProcedimientoConectar();
-            $cadena = "INSERT INTO `tratamientos`(`ID_paciente`,`Tipo_tratamiento`,`Costo`,`Fecha_inicio`) VALUES ($ID_paciente,'$Tipo_tratamiento',$Costo,'$Fecha_inicio')";
+            $cadena = "INSERT INTO tratamientos (ID_paciente,Tipo_tratamiento,Costo,Fecha_inicio) VALUES ($ID_paciente,'$Tipo_tratamiento',$Costo,'$Fecha_inicio')";
             $result = mysqli_query($con, $cadena);
             return 'ok';
         } catch (Throwable $th) {

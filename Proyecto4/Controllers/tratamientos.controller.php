@@ -18,6 +18,7 @@ switch ($_GET["op"]) {
         echo json_encode($uno); //devuelvo el arreglo en formato json
         break;
     case 'insertar':
+       // $ID_tratamiento  = $_POST["ID_tratamiento"]; //defino una variable para almacenar el id del usuario, la variable se obtiene mediante POST= $_POST["PaisId"];
         $ID_paciente  = $_POST["ID_paciente"]; //defino una variable para almacenar el id del usuario, la variable se obtiene mediante POST= $_POST["PaisId"];
         $Tipo_tratamiento   = $_POST["Tipo_tratamiento"];
         $Costo = $_POST["Costo"];

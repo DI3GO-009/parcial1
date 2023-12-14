@@ -4,8 +4,7 @@ class Pacientes_Model {
       Nombre,
       Edad,
       Enfermedad,
-      Fecha_ingreso,
-      
+      Fecha_ingreso,      
       Ruta
     ) {
       this.ID_paciente = ID_paciente;
